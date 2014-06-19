@@ -24,7 +24,8 @@ public class HireMe_Interface
           printOptions ();
           try 
           {
-              option=input.nextInt();              
+              option=input.nextInt(); 
+              System.out.println();
           }           
           catch (NumberFormatException nfe )
           {
@@ -53,7 +54,6 @@ public class HireMe_Interface
                   
                   break;
               case 2:
-                  myJobs.displayJobs();
                   if(myJobs.getJobSize()>0)
                   {
                       System.out.print("Enter jobID of job to be deleted: ");
@@ -91,7 +91,6 @@ public class HireMe_Interface
               case 8:
                   break;
               case 9:
-                  myJobs.displayJobs();
                   System.out.print("Enter JobID to be Filled: ");
                   myJobs.getJob(input.nextInt()).setFilled(true); 
                   break;
