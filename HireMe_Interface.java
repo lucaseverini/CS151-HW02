@@ -78,10 +78,18 @@ public class JobTest
                   myInterviewers.addInterviewer(input.nextLine());                  
                   break;
               case 6:
-                  input.nextLine();
-                  System.out.print("Enter Interviewer Name to be Deleted: ");
-                  myInterviewers.deleteInterviewer(input.nextLine());
-                  break;
+                  if(myJobs.getJobSize()>0)
+                  {
+                      input.nextLine();
+                      myInterviewers.displayInterviewers();
+                      System.out.print("Enter Interviewer Name to be Deleted: ");
+                      myInterviewers.deleteInterviewer(input.nextLine());                     
+                  }
+                  else
+                  {
+                      System.out.println("No Interviewers on List");
+                  }      
+                  
               case 7:
                   
                   break;

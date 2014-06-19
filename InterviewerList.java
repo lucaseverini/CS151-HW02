@@ -5,7 +5,8 @@
 package cs151_hw2;
 
 import java.util.HashMap;
-
+import java.util.Set;
+import java.util.Iterator;
 /**
  *
  * @author Hylix
@@ -30,7 +31,29 @@ public class InterviewerList {
         myMap.remove(name);
     }
     
-    public void printInterviewer(String name) {
-        System.out.println(myMap.get(name));
+    public int getInterviewerListSize()
+    {
+        return myMap.size();
+    }
+    
+    public void displayInterviewers()
+    {
+        Set keys=myMap.keySet();
+        int size=myMap.size();
+        System.out.println("Interviewers:");
+        if (size > 0)
+        {
+            for (Iterator i=keys.iterator(); i.hasNext();)
+            {         
+                int key=(int)i.next();
+                Interviewer nextInterviewer=(Interviewer) myMap.get(key);
+                System.out.printf("%s\n", nextInterviewer.getName());                
+            }
+            System.out.println();
+        }
+        else
+        {
+            System.out.println("No Jobs on List");
+        }
     }
 }
