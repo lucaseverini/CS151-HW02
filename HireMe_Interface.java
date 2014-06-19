@@ -14,19 +14,23 @@ public class HireMe_Interface
       //prompt user for input
       printOptions ();
       
-      int option;
+      int option=10;
 
       //  read the username from the command-line; need to use try/catch with the
       //  readLine() method
-      try
+      while (option!=0)
       {
-          option=input.nextInt();
-      } catch ( IOException | NumberFormatException nfe )
-      {
-         System.out.println ( "Error: Must Enter number(1-9). Please try again" );
-         System.exit ( 1 );
+          try 
+          {
+              option=input.nextInt();
+          }           
+          catch ( IOException | NumberFormatException nfe )
+          {
+             System.out.println ( "Error: Must Enter number(0-9). Please try again" );
+         
+          }
       }
-
+    
 
 
    }
