@@ -28,7 +28,7 @@ public class HireMe_Interface
           }           
           catch (NumberFormatException nfe )
           {
-             System.out.println ( "Error: Must Enter number(0-9). Please try again" );
+             System.out.println ( "Error: Must Enter number(0-10). Please try again" );
           }
           
          
