@@ -15,6 +15,7 @@ public class HireMe_Interface
       
       int option=-1;
       JobList myJobs=new JobList();
+      InterviewerList myInterviewers=new InterviewerList();
 
       //  read the username from the command-line; need to use try/catch with the
       //  readLine() method
