@@ -19,25 +19,18 @@ public class Job implements Comparable
 	private static int nextId = 1;
 	
 	int id;
-	String title;
+	String name;
+	String department;
 	String description;
-	int department;
-	int baseSalary;
-	List<Integer> interviews;
 	boolean filled;
-	int hiredApplicant;
-	int acceptedSalary;
-	Date startDate;
 	
-	Job()
+	Job(String name, String department, String description)
 	{
-		id = nextId++;
-		
-		title = "";
-		description = "";
-		department = 0;
-		baseSalary = 0;
-		interviews = new ArrayList<>();
+		this.id = nextId++;
+		this.name = name;
+		this.description = description;
+		this.department = department;
+		this.filled = false;
 	}
 
 	@Override
@@ -72,6 +65,6 @@ public class Job implements Comparable
 	@Override
 	public  String toString()
 	{
-		return id + " : " + title;
+		return id + " : " + name;
 	}
 }

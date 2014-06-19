@@ -67,12 +67,14 @@ public class HireMe
 		return null;
 	}
 	
-	int addApplicant(String firstName, String lastName)
+	int addApplicant(String firstName, String lastName, String email, int jobId)
 	{
 		Applicant applicant = new Applicant();
 		
 		applicant.firstName = firstName;
 		applicant.lastName = lastName;
+		applicant.email = email;
+		applicant.job = jobId;
 		
 		for(Applicant iter : applicants)
 		{
@@ -86,7 +88,28 @@ public class HireMe
 		
 		return applicant.id;
 	}
-	
+
+	int addInterviewer(String firstName, String lastName, int deptId)
+	{
+		Interviewer interviewer = new Interviewer();
+		
+		interviewer.firstName = firstName;
+		interviewer.lastName = lastName;
+		interviewer.department = deptId;
+		
+		for(Interviewer iter : interviewers)
+		{
+			if(iter.equals(interviewer))
+			{
+				return 0;
+			}
+		}
+
+		interviewers.add(interviewer);
+		
+		return interviewer.id;
+	}
+
 	Applicant getApplicant(int applicantId)
 	{
 		for(Applicant iter : applicants)
@@ -122,4 +145,80 @@ public class HireMe
 			System.out.println(iter);
 		}
 	}
+
+	void printInterviewers()
+	{
+		Collections.sort(interviewers);
+
+		for(Interviewer iter : interviewers)
+		{
+			System.out.println(iter);
+		}
+	}
+
+	void printJobs()
+	{
+		Collections.sort(jobs);
+
+		for(Job iter : jobs)
+		{
+			System.out.println(iter);
+		}
+	}
+
+	void printDepartments()
+	{
+		Collections.sort(departments);
+
+		for(Department iter : departments)
+		{
+			System.out.println(iter);
+		}
+	}
+	
+	int addDepartment(String name)
+	{
+		Department dept = new Department();
+		
+		dept.name = name;
+		
+		for(Department iter : departments)
+		{
+			if(iter.equals(dept))
+			{
+				return 0;
+			}
+		}
+		
+		departments.add(dept);
+		
+		return dept.id;
+	}
+	
+	int getDepartmentId(String name)
+	{
+		for(Department iter : departments)
+		{
+			if(iter.name.compareToIgnoreCase(name) == 0)
+			{
+				return iter.id;
+			}
+		}
+		
+		return 0;
+	}
+
+	int getJobId(String title)
+	{
+		for(Job iter : jobs)
+		{
+			if(iter.title.compareToIgnoreCase(title) == 0)
+			{
+				return iter.id;
+			}
+		}
+		
+		return 0;
+	}
+
 }
