@@ -136,6 +136,7 @@ public class JobTest
    
    public static void printOptions ()
    {            
+	System.out.println();
       System.out.println ( "**********************************************" );
       System.out.println ( "Hello, Welcome to HireMe" );
       System.out.println ( "Select an option by entering a number:" );
