@@ -31,6 +31,11 @@ public class InterviewerList {
         myMap.remove(name);
     }
     
+    public int getInterviewerListSize()
+    {
+        return myMap.size();
+    }
+    
     public void displayInterviewers()
     {
         Set keys=myMap.keySet();
