@@ -52,7 +52,7 @@ public class ApplicantList
 	}
 
 	@SuppressWarnings("unchecked")
-	void printJobs()
+	void diplayApplicants()
 	{
 		List<Applicant> applicants = new ArrayList(applicantList.values());
 		

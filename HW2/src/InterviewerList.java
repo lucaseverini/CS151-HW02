@@ -49,7 +49,7 @@ public class InterviewerList
 	}
 
 	@SuppressWarnings("unchecked")
-	void printInterviewers()
+	void displayInterviewers()
 	{
 		List<Interviewer> interviewers = new ArrayList(interviewersList.values());
 		

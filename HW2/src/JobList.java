@@ -51,7 +51,7 @@ public class JobList
 	}
 
 	@SuppressWarnings("unchecked")
-	void printJobs()
+	void displayJobs()
 	{
 		List<Job> jobs = new ArrayList(jobList.values());
 		
