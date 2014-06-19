@@ -17,15 +17,17 @@ public class Applicant implements Comparable
 	int id;
 	String firstName;
 	String lastName;
+	String email;
+	int rating[];
 	int job;
+	String interviewer;
 
-	Applicant()
+	Applicant(String firstName, String lastName, String email)
 	{
-		id = nextId++;
-		
-		firstName = "";
-		lastName = "";
-		job = 0;
+		this.id = nextId++;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
 	}
 
 	@Override
@@ -58,5 +60,53 @@ public class Applicant implements Comparable
 	public  String toString()
 	{
 		return "applicant " + lastName + " " + firstName;
+	}
+	
+	int getId()
+	{
+		return id;
+	}
+	
+	String getFirstName()
+	{
+		return firstName;
+	}
+
+	String getLastName()
+	{
+		return lastName;
+	}
+
+	String getEmail()
+	{
+		return email;
+	}
+
+	int[] getRating()
+	{
+		return rating;
+	}
+	
+	void setFirstName(String firstName)
+	{
+		this.firstName = firstName;
+	}
+
+	void setLastName(String lastName)
+	{
+		this.lastName = lastName;
+	}
+
+	void setEmail(String email)
+	{
+		this.email = email;
+	}
+
+	void setRating(int experience, int attitude, int salary)
+	{
+		rating = new int[3]; 
+		rating[0] = experience;
+		rating[1] = attitude;
+		rating[2] = salary;
 	}
 }
