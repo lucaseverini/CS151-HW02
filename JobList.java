@@ -27,7 +27,6 @@ public class JobList
     public void deleteJob(int jobId)
     {
         jobList.remove(jobId);
-        --this.jobId;
     }
     
     public void displayJobs()
