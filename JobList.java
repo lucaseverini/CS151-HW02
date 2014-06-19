@@ -38,6 +38,8 @@ public class JobList
                 Job nextJob=(Job) jobList.get(key);
                 System.out.printf("JobID:%d\nJob:%s\nDepartment:%s\nDescription:%s\n\n",nextJob.getId(),nextJob.getName(),nextJob.getDepartment(),nextJob.getDescription());
             }
+            
+            System.out.println();
         }
         else
         {
