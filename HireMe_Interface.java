@@ -22,7 +22,7 @@ public class HireMe_Interface
           option=input.nextInt();
       } catch ( IOException | NumberFormatException nfe )
       {
-         System.out.println ( "Please try again" );
+         System.out.println ( "Error: Must Enter number(1-9). Please try again" );
          System.exit ( 1 );
       }
 
