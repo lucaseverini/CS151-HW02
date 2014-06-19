@@ -6,7 +6,6 @@ import java.util.Set;
 public class JobList 
 {
     private HashMap jobList;
-    private int count;
     
     public JobList()
     {
