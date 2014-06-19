@@ -10,6 +10,7 @@ public class HireMe_Interface
 
    public static void main ( String[] args )
    {
+      Scanner input= new Scanner(System.in);
       //prompt user for input
       printOptions ();
       
