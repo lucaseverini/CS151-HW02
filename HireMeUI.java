@@ -2,6 +2,8 @@ package HireMe;
 
 import java.util.Scanner;
 
+
+
 public class JobTest
 {
     public static void main ( String[] args )
@@ -12,14 +14,13 @@ public class JobTest
       int option=-1;
       JobList myJobs=new JobList();
       InterviewerList myInterviewers=new InterviewerList();
-      //ApplicantList myApplicants=new ApplicantList();
+      ApplicantList myApplicants=new ApplicantList();
 
       //  read the username from the command-line; need to use try/catch with the
       //  readLine() method
       while (option!=0)
       {
           printOptions ();
-          
           try 
           {
               option=input.nextInt();
@@ -30,9 +31,12 @@ public class JobTest
              System.out.println ( "Error: Must Enter number(0-10). Please try again" );
           }
           
+         
+          
           switch (option)
           {
               case 1:
+                  
                   String jobName, jobDepartment,jobDescription;                  
                   input.nextLine();
                   System.out.print("Enter job Name: ");
@@ -42,20 +46,22 @@ public class JobTest
                   System.out.print("Enter job Description: ");  
                   jobDescription=input.nextLine();
                   myJobs.addJob(jobName, jobDepartment, jobDescription);
+                  
                   break;
-              case 2:                  
-                  if(myJobs.getJobSize()>0)
-                  {
-                      myJobs.displayJobIDs();
-                      System.out.print("Enter jobID of job to be deleted: ");
-                      myJobs.deleteJob(input.nextInt());                      
-                  }
-                  else
-                  {
-                      System.out.println("No Jobs on List.");
-                  }
+              case 2:     
+                  
+                    if(myJobs.getJobSize()>0)
+                    {
+                        myJobs.displayJobIDs();
+                        System.out.print("Enter jobID of job to be deleted: ");
+                        myJobs.deleteJob(input.nextInt());                      
+                    }
+                    else
+                    {
+                        System.out.println("No Jobs on List.");
+                    }
                   break;
-                  /*
+                  
               case 3:
                   String firstName, lastName, email;
                   input.nextLine();
@@ -65,20 +71,28 @@ public class JobTest
                   lastName=input.nextLine();
                   System.out.print("Enter Applicant email: ");
                   email=input.nextLine();
-                  myApplicants.add(firstName,lastName,email);
+                  myApplicants.addApplicant(firstName,lastName,email);
                   break;
               case 4:
-                  myApplicants.displayApplicants();
-                  System.out.print("Enter Applicant ID to be deleted: ");
-                  myApplicants.deleteApplicant(input.nextInt());                  
-                  break;*/
+                  if(myApplicants.getApplicantListSize()>0)
+                  {
+                      myApplicants.displayApplicants();
+                      System.out.print("Enter Applicant ID to be deleted: ");
+                      myApplicants.deleteApplicant(input.nextInt());                  
+                  }
+                  else
+                  {
+                      System.out.println("No Applicants on List");
+                  }    
+                                    
+                  break;
               case 5:
                   input.nextLine();
                   System.out.print("Enter Interviewer Name: ");
                   myInterviewers.addInterviewer(input.nextLine());                  
                   break;
               case 6:
-                  if(myJobs.getJobSize()>0)
+                  if(myInterviewers.getInterviewerListSize()>0)
                   {
                       input.nextLine();
                       myInterviewers.displayInterviewers();
@@ -90,12 +104,13 @@ public class JobTest
                       System.out.println("No Interviewers on List");
                   }      
                   
+                  break;
               case 7:
                   
                   break;
               case 8:
                   break;
-              case 9:                  
+              case 9:
                   if(myJobs.getJobSize()>0)
                   {
                       myJobs.displayJobIDs(); 
@@ -105,7 +120,8 @@ public class JobTest
                   else
                   {
                       System.out.println("No Jobs on List");
-                  }     
+                  }              
+                  break;
               case 10:
                   myJobs.displayJobs();
                   break;
@@ -117,9 +133,10 @@ public class JobTest
       }
    }
 
+   
    public static void printOptions ()
-   {
-            
+   {            
+	System.out.println();
       System.out.println ( "**********************************************" );
       System.out.println ( "Hello, Welcome to HireMe" );
       System.out.println ( "Select an option by entering a number:" );
@@ -134,11 +151,9 @@ public class JobTest
       System.out.println ( "8. Rate an applicant" );
       System.out.println ( "9. Mark a job as filled" );
       System.out.println("10. Display all Jobs");
-      System.out.println("0. Exit HireMe");
+      System.out.println("0, Exit HireMe");
       System.out.print ( "Choice: ");
-
    }
 }
-
 
      

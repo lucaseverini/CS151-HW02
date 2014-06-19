@@ -1,3 +1,5 @@
+package HireMe;
+
 public class Job 
 {
     private int id;
