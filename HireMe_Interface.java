@@ -1,6 +1,6 @@
 package HireMe;
 
-import java.io.*;
+import java.util.Scanner;
 
 /**
  @author Ed
@@ -12,15 +12,14 @@ public class HireMe_Interface
    {
       //prompt user for input
       printOptions ();
-      BufferedReader br = new BufferedReader ( new InputStreamReader ( System.in ) );
-
+      
       int option;
 
       //  read the username from the command-line; need to use try/catch with the
       //  readLine() method
       try
       {
-         option = Integer.parseInt ( br.readLine () );
+          option=input.nextInt();
       } catch ( IOException | NumberFormatException nfe )
       {
          System.out.println ( "Please try again" );
