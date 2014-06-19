@@ -26,6 +26,9 @@ public class HireMe_Interface
          System.out.println ( "Please try again" );
          System.exit ( 1 );
       }
+
+
+
    }
 
    public static void printOptions ()
@@ -33,7 +36,7 @@ public class HireMe_Interface
       System.out.println ( "" );
       System.out.println ( "**********************************************" );
       System.out.println ( "" );
-      System.out.println ( "Hello, Welcome to Hire me" );
+      System.out.println ( "Hello, Welcome to HireMe" );
       System.out.println ( "" );
       System.out.println ( "Select an option by entering a number:" );
       System.out.println ( "" );
@@ -49,11 +52,11 @@ public class HireMe_Interface
       System.out.println ( "" );
       System.out.println ( "6. Delete interviewer" );
       System.out.println ( "" );
-      System.out.println ( "4. Assign an interviewer to an applicant" );
+      System.out.println ( "7. Assign an interviewer to an applicant" );
       System.out.println ( "" );
-      System.out.println ( "5. Rate an applicant" );
+      System.out.println ( "8. Rate an applicant" );
       System.out.println ( "" );
-      System.out.println ( "6. Mark a job as filled" );
+      System.out.println ( "9. Mark a job as filled" );
       System.out.println ( "" );
 
    }
