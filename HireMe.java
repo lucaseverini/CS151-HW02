@@ -21,15 +21,15 @@ public class HireMe
 
    private void assignInterviewerToApplicant ( String interviewerName , int applicantID )
    {
-      //applicants should be a dynamic list
-      interviewers.get ( interviewerName ).applicants.add ( applicantID );
+      //adds an interviewer to a list in applicant class containing all interviewers for that applicant
+      applicants.applicantList.get ( applicantID ).interviewers.add ( interviewerName );
 
    }
-
+	
    private void rateApplicant ( int applicantID , Integer experienceRating , Integer attitudeRating , Integer salaryRating )
    {
-      applicants.get ( applicantID ).rating[1] = experienceRating;
-      applicants.get ( applicantID ).rating[2] = attitudeRating;
-      applicants.get ( applicantID ).rating[3] = salaryRating;
+      applicants.applicantList.get ( applicantID ).rating[1] = experienceRating;
+      applicants.applicantList.get ( applicantID ).rating[2] = attitudeRating;
+      applicants.applicantList.get ( applicantID ).rating[3] = salaryRating;
    }
 }
