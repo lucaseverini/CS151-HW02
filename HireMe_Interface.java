@@ -114,7 +114,7 @@ public class JobTest
       System.out.println ( "8. Rate an applicant" );
       System.out.println ( "9. Mark a job as filled" );
       System.out.println("10. Display all Jobs");
-      System.out.println("0, Exit HireMe");
+      System.out.println("0. Exit HireMe");
       System.out.print ( "Choice: ");
 
    }
