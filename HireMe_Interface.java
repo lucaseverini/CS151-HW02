@@ -80,6 +80,12 @@ public class HireMe_Interface
               case 8:
                   break;
               case 9:
+                  myJobs.displayJobs();
+                  System.out.print("Enter JobID to be Filled: ");
+                  myJobs.getJob(input.nextInt()).setFilled(true); 
+                  break;
+              case 10:
+                  myJobs.displayJobs();
                   break;
               case 0:
                   System.out.println("Thank you for using HireMe!");
@@ -115,6 +121,8 @@ public class HireMe_Interface
       System.out.println ( "8. Rate an applicant" );
       
       System.out.println ( "9. Mark a job as filled" );
+      
+      System.out.println("10. Display all Jobs");
       
       System.out.println("0, Exit HireMe");
       System.out.print ( "Choice: ");
