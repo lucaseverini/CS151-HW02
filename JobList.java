@@ -11,7 +11,6 @@ public class JobList
     public JobList()
     {
         jobList = new HashMap<Integer,Job>();
-        count=0;
     }
     
     public void addJob(int jobId, String jobName, String jobDepartment, String jobDescription)
