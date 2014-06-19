@@ -65,8 +65,14 @@ public class HireMe_Interface
               case 4:
                   break;
               case 5:
+                  input.nextLine();
+                  System.out.print("Enter Interviewer Name: ");
+                  myInterviewers.addInterviewer(input.nextLine());                  
                   break;
               case 6:
+                  input.nextLine();
+                  System.out.print("Enter Interviewer Name to be Deleted: ");
+                  myInterviewers.deleteInterviewer(input.nextLine());
                   break;
               case 7:
                   break;
