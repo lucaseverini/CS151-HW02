@@ -62,8 +62,19 @@ public class HireMe_Interface
                   }
                   break;
               case 3:
+                  String firstName, lastName;
+                  input.nextLine();
+                  System.out.print("Enter Applicant Last Name: ");
+                  firstName=input.nextLine();
+                  System.out.print("Enter Applicant First Name: ");
+                  lastName=input.nextLine();
+                  System.out.print("Enter Applicant email: ");
+                  myApplicants.add(firstName,lastName,input.nextLine());
                   break;
               case 4:
+                  myApplicants.displayApplicants();
+                  System.out.print("Enter Applicant ID to be deleted: ");
+                  myApplicants.deleteApplicant(input.nextInt());  
                   break;
               case 5:
                   input.nextLine();
