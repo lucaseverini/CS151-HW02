@@ -6,9 +6,9 @@ public class Job
     private String description;
     private boolean filled;
     
-    public Job(String newname, int newId, String newDescription, String newDepartment)
+    public Job(int newId, String newName, String newDescription, String newDepartment)
     {
-        name=newname;
+        name=newName;
         id=newId;
         description=newDescription;
         department=newDepartment;
