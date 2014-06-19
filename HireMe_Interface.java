@@ -14,7 +14,7 @@ public class HireMe_Interface
       //prompt user for input
       printOptions ();
       
-      int option=10;
+      int option=-1;
 
       //  read the username from the command-line; need to use try/catch with the
       //  readLine() method
