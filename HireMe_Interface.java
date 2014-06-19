@@ -46,8 +46,13 @@ public class JobTest
               case 2:                  
                   if(myJobs.getJobSize()>0)
                   {
+                      myJobs.displayJobIDs();
                       System.out.print("Enter jobID of job to be deleted: ");
-                      myJobs.deleteJob(input.nextInt());
+                      myJobs.deleteJob(input.nextInt());                      
+                  }
+                  else
+                  {
+                      System.out.println("No Jobs on List.");
                   }
                   break;
                   /*
@@ -83,9 +88,16 @@ public class JobTest
               case 8:
                   break;
               case 9:                  
-                  System.out.print("Enter JobID to be Filled: ");
-                  myJobs.getJob(input.nextInt()).setFilled(true);                 
-                  break;
+                  if(myJobs.getJobSize()>0)
+                  {
+                      myJobs.displayJobIDs(); 
+                      System.out.print("Enter JobID to be Filled: ");
+                      myJobs.getJob(input.nextInt()).setFilled(true);                      
+                  }
+                  else
+                  {
+                      System.out.println("No Jobs on List");
+                  }     
               case 10:
                   myJobs.displayJobs();
                   break;
@@ -114,7 +126,7 @@ public class JobTest
       System.out.println ( "8. Rate an applicant" );
       System.out.println ( "9. Mark a job as filled" );
       System.out.println("10. Display all Jobs");
-      System.out.println("0, Exit HireMe");
+      System.out.println("0. Exit HireMe");
       System.out.print ( "Choice: ");
 
    }
