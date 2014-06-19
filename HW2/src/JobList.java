@@ -13,12 +13,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-
 // JobList -----------------------------------------------------
 public class JobList 
 {
 	private static HashMap<Integer, Job> jobList;
-	private static int jobId = 1;
 
 	JobList()
 	{

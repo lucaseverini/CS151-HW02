@@ -65,6 +65,6 @@ public class Job implements Comparable
 	@Override
 	public  String toString()
 	{
-		return id + " : " + name;
+		return "Job " + id + " : " + name + " : " + department + " : " + (filled ? "[filled]" : "");
 	}
 }

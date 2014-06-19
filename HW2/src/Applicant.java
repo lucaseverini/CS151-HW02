@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -7,6 +8,9 @@
 /*
 	@author Luca
 */
+
+import java.util.ArrayList;
+import java.util.List;
 
 // Applicant -----------------------------------------------------
 public class Applicant implements Comparable
@@ -20,7 +24,7 @@ public class Applicant implements Comparable
 	String email;
 	int rating[];
 	int job;
-	String interviewer;
+	List<String> interviewers;
 
 	Applicant(String firstName, String lastName, String email)
 	{
@@ -28,6 +32,8 @@ public class Applicant implements Comparable
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+		
+		this.interviewers = new ArrayList<>();
 	}
 
 	@Override
@@ -108,5 +114,10 @@ public class Applicant implements Comparable
 		rating[0] = experience;
 		rating[1] = attitude;
 		rating[2] = salary;
+	}
+	
+	void addInterviewer(String interviewer)
+	{
+		this.interviewers.add(interviewer);
 	}
 }
