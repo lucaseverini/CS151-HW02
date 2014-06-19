@@ -1,3 +1,4 @@
+package HireMe;
 
 import java.util.ArrayList;
 
@@ -7,21 +8,21 @@ import java.util.ArrayList;
 public class HireMe
 {
 
-   private ArrayList<JobList> jobs;
-   private ArrayList<ApplicantList> applicants;
-   private ArrayList<InterviewerList> interviewers;
+   private JobList jobs;
+   private ApplicantList applicants;
+   private InterviewerList interviewers;
 
    public HireMe ()
    {
-      jobs = new ArrayList<> ();
-      applicants = new ArrayList<> ();
-      interviewers = new ArrayList<> ();
+      jobs = new JobList ();
+      applicants = new ApplicantList ();
+      interviewers = new InterviewerList ();
    }
 
-   private void assignInterviewerToApplicant ( int interviewerID , int applicantID )
+   private void assignInterviewerToApplicant ( String interviewerName , int applicantID )
    {
       //applicants should be a dynamic list
-      interviewers.get ( applicantID ).applicants.add ( applicantID );
+      interviewers.get ( interviewerName ).applicants.add ( applicantID );
 
    }
 
