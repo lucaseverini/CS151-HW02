@@ -1,3 +1,5 @@
+package HireMe;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
@@ -7,23 +9,25 @@ import java.util.Set;
 public class JobList 
 {
     private HashMap jobList;
-    private int count;
+    private int jobId;
     
     public JobList()
     {
         jobList = new HashMap<Integer,Job>();
-        count=0;
+        jobId=1;
     }
     
-    public void addJob(int jobId, String jobName, String jobDepartment, String jobDescription)
+    public void addJob(String jobName, String jobDepartment, String jobDescription)
     {
         Job nextJob=new Job(jobId,jobName,jobDescription,jobDepartment);
-        jobList.put(jobId, nextJob);        
+        jobList.put(jobId, nextJob);
+        ++jobId;
     }
     
     public void deleteJob(int jobId)
     {
         jobList.remove(jobId);
+        --this.jobId;
     }
     
     public void displayJobs()
@@ -36,9 +40,9 @@ public class JobList
             {         
                 int key=(int)i.next();
                 Job nextJob=(Job) jobList.get(key);
-                System.out.printf("JobID:%d\nJob:%s\nDepartment:%s\nDescription:%s\n\n",nextJob.getId(),nextJob.getName(),nextJob.getDepartment(),nextJob.getDescription());
+                System.out.printf("JobID:%d\nJob:%s\nDepartment:%s\nDescription:%s\n",nextJob.getId(),nextJob.getName(),nextJob.getDepartment(),nextJob.getDescription());
+                System.out.printf("Job Filled: %b", nextJob.getFilled());
             }
-            
             System.out.println();
         }
         else
@@ -51,4 +55,10 @@ public class JobList
     {
         return jobList.size();
     }
+    
+    public Job getJob(int jobId)
+    {
+        return (Job)jobList.get(jobId);
+    }
 }
+    
