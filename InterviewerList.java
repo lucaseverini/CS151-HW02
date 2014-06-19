@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package cs151_hw2;
+package HireMe;
 
 import java.util.HashMap;
 import java.util.Set;
