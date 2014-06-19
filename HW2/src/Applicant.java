@@ -65,7 +65,7 @@ public class Applicant implements Comparable
 	@Override
 	public  String toString()
 	{
-		return "applicant " + lastName + " " + firstName + " " + email;
+		return "applicant " + id + " " + lastName + " " + firstName + " " + email;
 	}
 	
 	int getId()
