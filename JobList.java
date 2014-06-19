@@ -50,6 +50,23 @@ public class JobList
         }
     }
     
+    public void displayJobIDs()
+    {
+        Set keys=jobList.keySet();
+        int size=jobList.size();
+        
+        System.out.print("Available JobIDs:");
+        if (size > 0)
+        {
+            for (Iterator i=keys.iterator(); i.hasNext();)
+            {         
+                int key=(int)i.next();
+                Job nextJob=(Job) jobList.get(key);
+                System.out.printf(" %d",nextJob.getId());                
+            }
+            System.out.println();
+        }
+    
     public int getJobSize()
     {
         return jobList.size();
