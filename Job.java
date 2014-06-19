@@ -64,3 +64,10 @@ public class Job
         return filled;
     }   
     
+    @Override
+    public  String toString()
+    {
+        return "Job " + id + " : " + name + " : " + department + " : " + (filled ? "[filled]" : "");
+    }
+}
+    
