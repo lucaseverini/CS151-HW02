@@ -16,7 +16,7 @@ public class JobList
     
     public void addJob(int jobId, String jobName, String jobDepartment, String jobDescription)
     {
-        Job nextJob=new Job(jobId, jobName,jobDescription,jobDepartment);
+        Job nextJob=new Job(jobId,jobName,jobDescription,jobDepartment);
         jobList.put(jobId, nextJob);        
     }
     
