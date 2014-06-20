@@ -1,4 +1,4 @@
-package HireMe;
+package hireme;
 
 public class Job 
 {
@@ -8,9 +8,9 @@ public class Job
     private String description;
     private boolean filled;
     
-    public Job(int newId, String newName, String newDescription, String newDepartment)
+    public Job(int newId, String newname, String newDescription, String newDepartment)
     {
-        name=newName;
+        name=newname;
         id=newId;
         description=newDescription;
         department=newDepartment;
@@ -71,5 +71,6 @@ public class Job
     {
         return "Job " + id + " : " + name + " : " + department + " : " + (filled ? "[filled]" : "");
     }
-}
     
+}
+
