@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class InterviewerList {
     private HashMap<String,Interviewer> myMap;  
-    private int id = 0;
+  
     
     public InterviewerList() 
     {
@@ -23,7 +23,7 @@ public class InterviewerList {
         Interviewer i =  new Interviewer(name);
         myMap.put(name, i);
            
-        id++;
+        
     }
     
     public void deleteInterviewer(String name) {
