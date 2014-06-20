@@ -1,4 +1,4 @@
-package HireMe;
+package hireme;
 
 import java.util.ArrayList;
 
