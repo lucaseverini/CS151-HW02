@@ -16,3 +16,4 @@ BuildTimeStrings.properties
 
 # Class Files #
 *.class
+/HW2-Final/nbproject/private/
