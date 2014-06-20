@@ -1,15 +1,14 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Edmund Dao
+ * Dennis Hsu
+ * Luca Severini
+ * Brian Lee
  */
-package HireMe;
+
+package hireme;   
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Hylix
- */
 public class Interviewer {
     private String name;
     
@@ -26,9 +25,11 @@ public class Interviewer {
     public void setName(String name) {
         this.name = name;
     }
+    
     @Override
-    public  String toString()
+    public String toString()
     {
-        return "interviewer " + name;
+        return this.name;
     }
-}
+} 
+

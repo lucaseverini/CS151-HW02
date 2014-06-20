@@ -1,21 +1,25 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Edmund Dao
+ * Dennis Hsu
+ * Luca Severini
+ * Brian Lee
  */
-package HireMe;
 
-import java.util.HashMap;
-import java.util.Set;
-import java.util.Iterator;
+package hireme;
+
+import java.util.*;
+
 /**
  *
  * @author Hylix
  */
 public class InterviewerList {
-    private HashMap myMap = new HashMap();
-    private int id = 0;
+    private HashMap<String,Interviewer> myMap;  
+  
     
-    public InterviewerList() {
+    public InterviewerList() 
+    {
+        myMap = new HashMap();
     }
     
     public InterviewerList(HashMap newMap) {
@@ -23,8 +27,10 @@ public class InterviewerList {
     }
     
     public void addInterviewer(String name){
-        myMap.put(name, name);
-        id++;
+        Interviewer i =  new Interviewer(name);
+        myMap.put(name, i);
+           
+        
     }
     
     public void deleteInterviewer(String name) {
@@ -36,24 +42,27 @@ public class InterviewerList {
         return myMap.size();
     }
     
-    public void displayInterviewers()
+    public HashMap getInterviewerList()
     {
-        Set keys=myMap.keySet();
-        int size=myMap.size();
-        System.out.println("Interviewers:");
-        if (size > 0)
+        return myMap;
+    }
+    
+   public void displayInterviewers()
+    {
+        List<Interviewer> allInterviewers = new ArrayList(myMap.values());
+        
+        if (allInterviewers.size()>0)
         {
-            for (Iterator i=keys.iterator(); i.hasNext();)
-            {         
-                int key=(int)i.next();
-                Interviewer nextInterviewer=(Interviewer) myMap.get(key);
-                System.out.printf("%s\n", nextInterviewer.getName());                
+            System.out.println("Interviewers:");
+            for(Interviewer iter : allInterviewers)
+            {              
+                System.out.print(iter);
+                System.out.println("");
             }
-            System.out.println();
         }
         else
         {
-            System.out.println("No Jobs on List");
+            System.out.println("No Interviewers on List");
         }
     }
 }

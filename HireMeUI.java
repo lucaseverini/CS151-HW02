@@ -1,10 +1,16 @@
-package HireMe;
+/*
+ * Edmund Dao
+ * Dennis Hsu
+ * Luca Severini
+ * Brian Lee
+ */
+
+package hireme;  
 
 import java.util.Scanner;
 
 
-
-public class JobTest
+public class HireMeUI
 {
     public static void main ( String[] args )
    {
@@ -12,9 +18,7 @@ public class JobTest
       //prompt user for input     
       
       int option=-1;
-      JobList myJobs=new JobList();
-      InterviewerList myInterviewers=new InterviewerList();
-      ApplicantList myApplicants=new ApplicantList();
+      HireMe myHireMe= new HireMe();      
 
       //  read the username from the command-line; need to use try/catch with the
       //  readLine() method
@@ -23,12 +27,12 @@ public class JobTest
           printOptions ();
           try 
           {
-              option=input.nextInt();
+              option=Integer.parseInt(input.next());
               System.out.println();
           }           
           catch (NumberFormatException nfe )
           {
-             System.out.println ( "Error: Must Enter number(0-10). Please try again" );
+             System.out.println ( "Error: Must Enter number(0-12). Please try again" );
           }
           
          
@@ -45,16 +49,16 @@ public class JobTest
                   jobDepartment=input.nextLine();
                   System.out.print("Enter job Description: ");  
                   jobDescription=input.nextLine();
-                  myJobs.addJob(jobName, jobDepartment, jobDescription);
+                  myHireMe.getJobList().addJob(jobName, jobDepartment, jobDescription);
                   
                   break;
               case 2:     
                   
-                    if(myJobs.getJobSize()>0)
+                    if(myHireMe.getJobList().getJobSize()>0)
                     {
-                        myJobs.displayJobIDs();
+                        myHireMe.getJobList().displayJobIDs();
                         System.out.print("Enter jobID of job to be deleted: ");
-                        myJobs.deleteJob(input.nextInt());                      
+                        myHireMe.getJobList().deleteJob(input.nextInt());                      
                     }
                     else
                     {
@@ -71,14 +75,14 @@ public class JobTest
                   lastName=input.nextLine();
                   System.out.print("Enter Applicant email: ");
                   email=input.nextLine();
-                  myApplicants.addApplicant(firstName,lastName,email);
+                  myHireMe.getApplicantList().addApplicant(firstName,lastName,email);
                   break;
               case 4:
-                  if(myApplicants.getApplicantListSize()>0)
+                  if(myHireMe.getApplicantList().getApplicantListSize()>0)
                   {
-                      myApplicants.displayApplicants();
+                      myHireMe.getApplicantList().displayApplicants();
                       System.out.print("Enter Applicant ID to be deleted: ");
-                      myApplicants.deleteApplicant(input.nextInt());                  
+                      myHireMe.getApplicantList().deleteApplicant(input.nextInt());                  
                   }
                   else
                   {
@@ -89,15 +93,15 @@ public class JobTest
               case 5:
                   input.nextLine();
                   System.out.print("Enter Interviewer Name: ");
-                  myInterviewers.addInterviewer(input.nextLine());                  
+                  myHireMe.getInterviewerList().addInterviewer(input.nextLine());                  
                   break;
               case 6:
-                  if(myInterviewers.getInterviewerListSize()>0)
+                  if(myHireMe.getInterviewerList().getInterviewerListSize()>0)
                   {
                       input.nextLine();
-                      myInterviewers.displayInterviewers();
+                      myHireMe.getInterviewerList().displayInterviewers();
                       System.out.print("Enter Interviewer Name to be Deleted: ");
-                      myInterviewers.deleteInterviewer(input.nextLine());                     
+                      myHireMe.getInterviewerList().deleteInterviewer(input.nextLine());                     
                   }
                   else
                   {
@@ -106,16 +110,49 @@ public class JobTest
                   
                   break;
               case 7:
-                  
+                  if(myHireMe.getApplicantList().getApplicantListSize()>0 && myHireMe.getInterviewerList().getInterviewerListSize()>0)
+                  {
+                      int applicantID;
+                      myHireMe.getApplicantList().displayApplicants();
+                      System.out.print("Enter ApplicantID: ");
+                      applicantID=input.nextInt();
+                      input.nextLine();
+                      myHireMe.getInterviewerList().displayInterviewers();
+                      System.out.print("Enter Interviewer Name:");
+                      myHireMe.assignInterviewerToApplicant(input.nextLine(), applicantID);
+                  }
+                  else
+                  {
+                      System.out.println("Interviewer or Applicant List empty.");
+                  }
                   break;
               case 8:
+                  if(myHireMe.getApplicantList().getApplicantListSize()>0)
+                  {
+                      int applicantID;
+                      int experience,attitude,salary;                      
+                      myHireMe.getApplicantList().displayApplicants();
+                      System.out.print("Enter Applicant ID: ");
+                      applicantID=input.nextInt();
+                      System.out.print("Experience Rating: ");
+                      experience=input.nextInt();
+                      System.out.print("Attitude Rating: ");
+                      attitude=input.nextInt();
+                      System.out.print("Salary Rating: ");
+                      salary=input.nextInt();
+                      myHireMe.rateApplicant(applicantID, experience, attitude, salary);
+                  }
+                  else
+                  {
+                      System.out.println("No Applicants on List");
+                  }
                   break;
               case 9:
-                  if(myJobs.getJobSize()>0)
+                  if(myHireMe.getJobList().getJobSize()>0)
                   {
-                      myJobs.displayJobIDs(); 
+                      myHireMe.getJobList().displayJobIDs(); 
                       System.out.print("Enter JobID to be Filled: ");
-                      myJobs.getJob(input.nextInt()).setFilled(true);                      
+                      myHireMe.getJobList().getJob(input.nextInt()).setFilled(true);                      
                   }
                   else
                   {
@@ -123,7 +160,13 @@ public class JobTest
                   }              
                   break;
               case 10:
-                  myJobs.displayJobs();
+                  myHireMe.getJobList().displayJobs();
+                  break;
+              case 11:
+                  myHireMe.getApplicantList().displayApplicants();
+                  break;
+              case 12:
+                  myHireMe.getInterviewerList().displayInterviewers();
                   break;
               case 0:
                   System.out.println("Thank you for using HireMe!");
@@ -136,7 +179,6 @@ public class JobTest
    
    public static void printOptions ()
    {            
-	System.out.println();
       System.out.println ( "**********************************************" );
       System.out.println ( "Hello, Welcome to HireMe" );
       System.out.println ( "Select an option by entering a number:" );
@@ -151,9 +193,9 @@ public class JobTest
       System.out.println ( "8. Rate an applicant" );
       System.out.println ( "9. Mark a job as filled" );
       System.out.println("10. Display all Jobs");
-      System.out.println("0, Exit HireMe");
+      System.out.println("11. Display all Applicants");
+      System.out.println("12. Display all Interviewers");
+      System.out.println("0. Exit HireMe");
       System.out.print ( "Choice: ");
    }
 }
-
-     

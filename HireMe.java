@@ -1,10 +1,12 @@
-package HireMe;
-
-import java.util.ArrayList;
-
-/**
- @author Ed
+/*
+ * Edmund Dao
+ * Dennis Hsu
+ * Luca Severini
+ * Brian Lee
  */
+
+package hireme;
+
 public class HireMe
 {
 
@@ -18,18 +20,31 @@ public class HireMe
       applicants = new ApplicantList ();
       interviewers = new InterviewerList ();
    }
+   
+   public JobList getJobList()
+   {
+       return jobs;
+   }
 
-   private void assignInterviewerToApplicant ( String interviewerName , int applicantID )
+   public ApplicantList getApplicantList()
+   {
+      return applicants;
+   }
+   
+   public InterviewerList getInterviewerList()
+   {
+       return interviewers;
+   }
+   
+   public void assignInterviewerToApplicant ( String interviewerName , int applicantID )
    {
       //adds an interviewer to a list in applicant class containing all interviewers for that applicant
-      applicants.applicantList.get ( applicantID ).interviewers.add ( interviewerName );
+      applicants.getApplicant(applicantID).addInterviewer(interviewerName);
 
    }
-	
-   private void rateApplicant ( int applicantID , Integer experienceRating , Integer attitudeRating , Integer salaryRating )
+
+   public void rateApplicant ( int applicantID , Integer experienceRating , Integer attitudeRating , Integer salaryRating )
    {
-      applicants.applicantList.get ( applicantID ).rating[1] = experienceRating;
-      applicants.applicantList.get ( applicantID ).rating[2] = attitudeRating;
-      applicants.applicantList.get ( applicantID ).rating[3] = salaryRating;
+      applicants.getApplicant(applicantID).setRating(experienceRating,attitudeRating,salaryRating);
    }
 }

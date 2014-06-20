@@ -1,4 +1,11 @@
-package HireMe;
+/*
+ * Edmund Dao
+ * Dennis Hsu
+ * Luca Severini
+ * Brian Lee
+ */
+
+package hireme;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -9,6 +16,7 @@ import java.util.Set;
 public class JobList 
 {
     private HashMap jobList;
+    
     private int jobId;
     
     public JobList()
@@ -27,6 +35,7 @@ public class JobList
     public void deleteJob(int jobId)
     {
         jobList.remove(jobId);
+        
     }
     
     public void displayJobs()
@@ -37,12 +46,12 @@ public class JobList
         {
             for (Iterator i=keys.iterator(); i.hasNext();)
             {         
-                int key=(int)i.next();
+                int key=(Integer)i.next();
                 Job nextJob=(Job) jobList.get(key);
                 System.out.printf("JobID:%d\nJob:%s\nDepartment:%s\nDescription:%s\n",nextJob.getId(),nextJob.getName(),nextJob.getDepartment(),nextJob.getDescription());
-                System.out.printf("Job Filled: %b", nextJob.getFilled());
+                System.out.printf("Job Filled: %b\n\n", nextJob.getFilled());
             }
-            System.out.println();
+            
         }
         else
         {
@@ -60,12 +69,13 @@ public class JobList
         {
             for (Iterator i=keys.iterator(); i.hasNext();)
             {         
-                int key=(int)i.next();
+                int key=(Integer)i.next();
                 Job nextJob=(Job) jobList.get(key);
                 System.out.printf(" %d",nextJob.getId());                
             }
             System.out.println();
         }
+    }
     
     public int getJobSize()
     {
@@ -76,5 +86,9 @@ public class JobList
     {
         return (Job)jobList.get(jobId);
     }
-}
     
+    public HashMap getJobList()
+    {
+        return jobList;
+    }
+}
