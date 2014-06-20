@@ -1,3 +1,10 @@
+/*
+ * Edmund Dao
+ * Dennis Hsu
+ * Luca Severini
+ * Brian Lee
+ */
+
 package hireme;
 
 import java.util.ArrayList;
@@ -13,7 +20,7 @@ public class ApplicantList
 
 	ApplicantList()
 	{
-		applicantList = new HashMap<>();
+		applicantList = new HashMap();
 	}
 
 	int addApplicant(String firstName, String lastName, String email)

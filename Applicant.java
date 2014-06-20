@@ -1,3 +1,10 @@
+/*
+ * Edmund Dao
+ * Dennis Hsu
+ * Luca Severini
+ * Brian Lee
+ */
+
 package hireme;
 
 import java.util.ArrayList;
@@ -25,7 +32,7 @@ public class Applicant implements Comparable
 		this.email = email;
                 this.rating= new int[3];
 
-		this.interviewers = new ArrayList<>();
+		this.interviewers = new ArrayList();
 	}
 
 	@Override

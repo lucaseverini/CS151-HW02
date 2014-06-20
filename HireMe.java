@@ -1,6 +1,11 @@
-package hireme;
+/*
+ * Edmund Dao
+ * Dennis Hsu
+ * Luca Severini
+ * Brian Lee
+ */
 
-import java.util.ArrayList;
+package hireme;
 
 public class HireMe
 {
