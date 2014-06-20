@@ -1,15 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package HireMe;
+
+
+   
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Hylix
- */
 public class Interviewer {
     private String name;
     
@@ -26,9 +21,11 @@ public class Interviewer {
     public void setName(String name) {
         this.name = name;
     }
+    
     @Override
-    public  String toString()
+    public String toString()
     {
-        return "interviewer " + name;
+        return this.name;
     }
-}
+} 
+
