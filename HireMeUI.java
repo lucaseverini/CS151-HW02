@@ -1,8 +1,9 @@
+package HireMe;  
+
 import java.util.Scanner;
 
 
-
-public class JobTest
+public class HireMeUI
 {
     public static void main ( String[] args )
    {
@@ -24,7 +25,7 @@ public class JobTest
           }           
           catch (NumberFormatException nfe )
           {
-             System.out.println ( "Error: Must Enter number(0-10). Please try again" );
+             System.out.println ( "Error: Must Enter number(0-12). Please try again" );
           }
           
          
@@ -122,7 +123,8 @@ public class JobTest
                   if(myHireMe.getApplicantList().getApplicantListSize()>0)
                   {
                       int applicantID;
-                      int experience,attitude,salary;
+                      int experience,attitude,salary;                      
+                      myHireMe.getApplicantList().displayApplicants();
                       System.out.print("Enter Applicant ID: ");
                       applicantID=input.nextInt();
                       System.out.print("Experience Rating: ");
@@ -153,6 +155,12 @@ public class JobTest
               case 10:
                   myHireMe.getJobList().displayJobs();
                   break;
+              case 11:
+                  myHireMe.getApplicantList().displayApplicants();
+                  break;
+              case 12:
+                  myHireMe.getInterviewerList().displayInterviewers();
+                  break;
               case 0:
                   System.out.println("Thank you for using HireMe!");
                   break;
@@ -178,6 +186,8 @@ public class JobTest
       System.out.println ( "8. Rate an applicant" );
       System.out.println ( "9. Mark a job as filled" );
       System.out.println("10. Display all Jobs");
+      System.out.println("11. Display all Applicants");
+      System.out.println("12. Display all Interviewers");
       System.out.println("0, Exit HireMe");
       System.out.print ( "Choice: ");
    }
